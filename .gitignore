@@ -152,3 +152,4 @@ pad.sublime-workspace
 *.xccheckout
 
 docker-compose.yml
+.env
