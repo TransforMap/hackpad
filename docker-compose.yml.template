@@ -1,0 +1,23 @@
+web:
+  image: hackpad/demo
+  ports:
+    - 80:80
+  environment:
+    - HACKPAD_BRAND_NAME=TransforMap
+    - HACKPAD_EMAIL_ADDRESSES_WITH_ADMIN_ACCESS=
+    - HACKPAD_SUPERUSER_EMAIL_ADDRESSESS=
+    - HACKPAD_SMTP_SERVER=HOST:PORT
+    - HACKPAD_SMTP_USER=
+    - HACKPAD_SMTP_PASSWORD=
+    - HACKPAD_DBC_DBUSER=hackpad
+    - HACKPAD_DBC_DBPASS=hackpad
+    - HACKPAD_IS_PRODUCTION=true
+  links:
+    - mysql:db
+mysql:
+  image: tutum/mysql:5.5
+  environment:
+    - MYSQL_USER=hackpad
+    - MYSQL_PASS=hackpad
+    - ON_CREATE_DB=hackpad
+
